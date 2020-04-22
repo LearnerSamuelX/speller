@@ -161,18 +161,11 @@ bool unload(void)
 {
     for (int k=0;k<N;k++)  //looping through the hash array which is consisted of N "head" nodes
     {
-
-        if(hashtable[k]==NULL)
-        {
-            free(hashtable[k]);
-        }
-        else
-        {
-            cursor = hashtable[k]->next;
-            temp = cursor;
-            cursor = cursor->next;
-            free(temp);
-        }
+        cursor = hashtable[k]->next;
+        temp = cursor;
+        cursor = cursor->next;
+        free(temp);
     }
     return true;
 }
+
